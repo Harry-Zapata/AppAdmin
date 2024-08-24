@@ -19,6 +19,8 @@ namespace AppAdmin.ViewModel
         public string direccion;
         public string nombre;
         public string telefono;
+        private bool terminosAceptados;
+        private bool privacidadAceptada;
         #endregion
 
         #region OBJETOS
@@ -47,11 +49,38 @@ namespace AppAdmin.ViewModel
             get { return telefono; }
             set { SetValue(ref telefono, value); }
         }
+        public bool TerminosAceptados
+        {
+            get { return terminosAceptados; }
+            set { SetValue(ref terminosAceptados, value); }
+        }
+
+        public bool PrivacidadAceptada
+        {
+            get { return privacidadAceptada; }
+            set { SetValue(ref privacidadAceptada, value); }
+        }
         #endregion
 
         #region PROCESOS
         private async Task insertarUsuarios()
         {
+            if (string.IsNullOrWhiteSpace(txtDni) ||
+                string.IsNullOrWhiteSpace(txtNombre) ||
+                string.IsNullOrWhiteSpace(txtApellido) ||
+                string.IsNullOrWhiteSpace(txtTelefono) ||
+                string.IsNullOrWhiteSpace(txtDireccion))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Debe llenar todos los campos.", "OK");
+                return;
+            }
+
+            if (!TerminosAceptados || !PrivacidadAceptada)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Debe aceptar los términos y condiciones y la política de privacidad para registrarse.", "OK");
+                return;
+            }
+
             var funcion = new Dusuario();
             var campos = new MUsuarios();
             campos.Apellido = txtApellido;
