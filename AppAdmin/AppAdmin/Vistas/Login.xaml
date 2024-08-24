@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAdmin.Vistas.Login"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/236x/87/ae/1a/87ae1a962f81a163cd6507f2add9da6b.jpg"
+                   Aspect="Fill" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"
+                   />
+            <StackLayout Margin="50"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <Frame CornerRadius="25">
+                    <StackLayout WidthRequest="300"> 
+                        <Label Text="Login" 
+                               TextColor="#000" 
+                               FontAttributes="Bold" 
+                               FontSize="20" 
+                               HorizontalOptions="Center"
+                               />
+                        <Image Source="https://cdn.www.gob.pe/uploads/medium/archive/000/010/331/dni-digito-verificador.png"
+                               />
+                        <Entry Placeholder="Ingrese su DNI"
+                               HorizontalTextAlignment="Center"/>
+                        <Button Text="Ingresar"
+                                BackgroundColor="#22bb33"
+                                CornerRadius="10"/>
+
+                        <Label HorizontalOptions="Center" Margin="0,15,0,15">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="¿No tienes cuenta? "/>
+                                    <Span Text="Registrate"
+                                          TextColor="Red">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Ir_A_Registro"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+            
+    </ContentPage.Content>
+</ContentPage>
