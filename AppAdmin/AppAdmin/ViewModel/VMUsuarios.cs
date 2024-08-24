@@ -94,7 +94,22 @@ namespace AppAdmin.ViewModel
             {
                 await DisplayAlert("Registro", "Se registro el usuario correctamente","OK");
             }
+            if (estadoFuncion)
+            {
+                // Limpia los campos del formulario
+                txtApellido = string.Empty;
+                txtNombre = string.Empty;
+                txtDni = string.Empty;
+                txtTelefono = string.Empty;
+                txtDireccion = string.Empty;
+                TerminosAceptados = false;
+                PrivacidadAceptada = false;
+
+                // Navega a la página de inicio de sesión
+                await Navigation.PushAsync(new Login()); // Asegúrate de que `LoginPage` es la página de inicio de sesión correcta
+            }
         }
+        
         #endregion
 
         #region COMANDOS
