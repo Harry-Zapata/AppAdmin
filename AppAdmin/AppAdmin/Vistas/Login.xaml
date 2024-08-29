@@ -24,10 +24,14 @@
                         <Image Source="https://cdn.www.gob.pe/uploads/medium/archive/000/010/331/dni-digito-verificador.png"
                                />
                         <Entry Placeholder="Ingrese su DNI"
-                               HorizontalTextAlignment="Center"/>
+                               HorizontalTextAlignment="Center"
+                               Text="{Binding txtDni}"
+                               />
                         <Button Text="Ingresar"
                                 BackgroundColor="#22bb33"
-                                CornerRadius="10"/>
+                                CornerRadius="10"
+                                Command="{Binding ValidarComando}"
+                                />
 
                         <Label HorizontalOptions="Center" Margin="0,15,0,15">
                             <Label.FormattedText>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppAdmin.Vistas.Admin"
+             x:Class="AppAdmin.Vistas.index"
+             NavigationPage.HasNavigationBar="False">
+    <!-- Referencia a las páginas creadas -->
+    <local:card Title="Card 1" />
+    <local:profile Title="Card 2"/>
+    <local:search Title="Card 3"/>
+    <local:settings Title="Card 4"/>
+    <local:shopping Title="Card 5"/>
+    <!-- Añade más páginas aquí -->
+</TabbedPage>
+

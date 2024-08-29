@@ -82,34 +82,36 @@ namespace AppAdmin.ViewModel
             }
 
             var funcion = new Dusuario();
-            var campos = new MUsuarios();
-            campos.Apellido = txtApellido;
-            campos.Nombre = txtNombre;
-            campos.Dni = txtDni;
-            campos.Direccion = txtDireccion;
-            campos.Telefono = txtTelefono;
+            var campos = new MUsuarios
+            {
+                Apellido = txtApellido,
+                Nombre = txtNombre,
+                Dni = txtDni,
+                Direccion = txtDireccion,
+                Telefono = txtTelefono
+            };
 
             var estadoFuncion = await funcion.InsertarUsuario(campos);
-            if (estadoFuncion)
+            if (!estadoFuncion)
             {
-                await DisplayAlert("Registro", "Se registro el usuario correctamente","OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "El DNI ya está ingresado.", "OK");
+                return;
             }
-            if (estadoFuncion)
-            {
-                // Limpia los campos del formulario
-                txtApellido = string.Empty;
-                txtNombre = string.Empty;
-                txtDni = string.Empty;
-                txtTelefono = string.Empty;
-                txtDireccion = string.Empty;
-                TerminosAceptados = false;
-                PrivacidadAceptada = false;
 
-                // Navega a la página de inicio de sesión
-                await Navigation.PushAsync(new Login()); // Asegúrate de que `LoginPage` es la página de inicio de sesión correcta
-            }
+            await Application.Current.MainPage.DisplayAlert("Registro", "Se registró el usuario correctamente", "OK");
+
+            // Limpiar los campos del formulario
+            txtApellido = string.Empty;
+            txtNombre = string.Empty;
+            txtDni = string.Empty;
+            txtTelefono = string.Empty;
+            txtDireccion = string.Empty;
+            TerminosAceptados = false;
+            PrivacidadAceptada = false;
+
+            // Navegar a la página de inicio de sesión
+            await Navigation.PushAsync(new Login()); // Asegúrate de que `Login` es la página de inicio de sesión correcta
         }
-        
         #endregion
 
         #region COMANDOS

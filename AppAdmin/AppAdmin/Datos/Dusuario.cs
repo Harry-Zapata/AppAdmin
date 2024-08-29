@@ -14,8 +14,22 @@ namespace AppAdmin.Datos
     {
         public async Task<bool> InsertarUsuario(MUsuarios usuarios)
         {
+            // Verificar si el DNI ya existe en la base de datos
+            var usuariosExistentes = await ConexionFirebase.ClientFirebase
+                .Child("Usuarios")
+                .OrderBy("Dni")
+                .EqualTo(usuarios.Dni)
+                .OnceAsync<MUsuarios>();
+
+            if (usuariosExistentes.Any())
+            {
+                return false; // DNI ya existe
+            }
+
+            // Insertar el nuevo usuario
             await ConexionFirebase.ClientFirebase
-                .Child("Usuarios").PostAsync(new MUsuarios()
+                .Child("Usuarios")
+                .PostAsync(new MUsuarios()
                 {
                     Apellido = usuarios.Apellido,
                     Dni = usuarios.Dni,
@@ -23,9 +37,24 @@ namespace AppAdmin.Datos
                     Nombre = usuarios.Nombre,
                     Telefono = usuarios.Telefono,
                 });
+
             return true;
         }
 
+        public async Task<List<MUsuarios>> ValidarLogin(MUsuarios mUsuarios)
+        {
+            return (await ConexionFirebase.ClientFirebase
+                .Child("Usuarios").OnceAsync<MUsuarios>()).
+                Where(a=>a.Object.Dni == mUsuarios.Dni)
+                .Select(item => new MUsuarios
+                {
+                    Dni = item.Object.Dni,
+                    Apellido = item.Object.Apellido,
+                    Nombre = item.Object.Nombre,
+                    Direccion= item.Object.Direccion,
+                    Telefono= item.Object.Telefono,
+                }).ToList();
+        }
 
 
         public async Task<List<MUsuarios>> MostrarUsuarios()
