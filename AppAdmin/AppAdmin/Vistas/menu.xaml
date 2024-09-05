@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAdmin.Vistas.menu"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/236x/87/ae/1a/87ae1a962f81a163cd6507f2add9da6b.jpg"
+           Aspect="Fill" 
+           HorizontalOptions="FillAndExpand" 
+           VerticalOptions="FillAndExpand"
+           />
+
+            <StackLayout>
+                <Label Text="Hola" TextColor="White"/>
+                <Label TextColor="White">
+                    <Label.Text>
+                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                            <Binding Path="lblNombre" />
+                            <Binding Path="lblApellido" />
+                            <Binding Path="lblDni"/>
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+                <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"/>
+
+                <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" Padding="30">
+                    <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="Beige" Padding="10">
+                        <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"
+                               WidthRequest="100"/>
+                        <Label Text="Texto de prueba" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="0" BackgroundColor="Beige" Padding="10">
+                        <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"
+                               WidthRequest="100"/>
+                        <Label Text="Texto de prueba" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="0" Grid.Row="1" BackgroundColor="Beige" Padding="10">
+                        <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"
+                               WidthRequest="100"/>
+                        <Label Text="Texto de prueba" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="1" BackgroundColor="Beige" Padding="10">
+                        <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"
+                               WidthRequest="100"/>
+                        <Label Text="Texto de prueba" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="0" Grid.Row="2" BackgroundColor="Beige" Padding="10">
+                        <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"
+                               WidthRequest="100"/>
+                        <Label Text="Texto de prueba" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="2" BackgroundColor="Beige" Padding="10">
+                        <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"
+                               WidthRequest="100"/>
+                        <Label Text="Texto de prueba" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+                <Button Text="Salir" Margin="30,0,30,0" Padding="20"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -42,7 +42,7 @@ namespace AppAdmin.ViewModel
 
             if (lstUsuarios.Count > 0)
             {
-                await Navigation.PushAsync(new index());
+                await Navigation.PushAsync(new menu(lstUsuarios));
             }
             else
             {
