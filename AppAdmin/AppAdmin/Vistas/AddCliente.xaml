@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAdmin.Vistas.AddCliente"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/236x/87/ae/1a/87ae1a962f81a163cd6507f2add9da6b.jpg"
+   Aspect="Fill" 
+   HorizontalOptions="FillAndExpand" 
+   VerticalOptions="FillAndExpand"
+   />
+            <StackLayout Margin="50"
+         HorizontalOptions="CenterAndExpand"
+         VerticalOptions="CenterAndExpand">
+                <Frame CornerRadius="25">
+                    <StackLayout WidthRequest="300">
+                        <Label Text="Registrar Clientes" 
+                       TextColor="#000" 
+                       FontAttributes="Bold" 
+                       FontSize="20" 
+                       HorizontalOptions="Center"/>
+                        <Entry Placeholder="Ingrese su Direccion"
+                       HorizontalTextAlignment="Center"
+                       FontSize="15"
+                       Text="{Binding txtDireccion}"
+                       MaxLength="8"
+                       Keyboard="Numeric"/>
+
+                        <Entry Placeholder="Ingrese su Dni"
+                       HorizontalTextAlignment="Center"
+                       FontSize="15"
+                       Text="{Binding txtDni}"/>
+
+                        <Entry Placeholder="Ingrese su Email"
+                       HorizontalTextAlignment="Center"
+                       FontSize="15"
+                       Text="{Binding txtEmail}"/>
+
+                        <Entry Placeholder="Ingrese el Estado"
+                       HorizontalTextAlignment="Center"
+                       FontSize="15"
+                       Text="{Binding txtEstado}"
+                       Keyboard="Numeric"
+                       MaxLength="9"
+                       />
+
+                        <Entry Placeholder="Ingrese su Fecha de Nacimineto"
+                       HorizontalTextAlignment="Center"
+                       FontSize="15"
+                       Text="{Binding txtFechaNacimineto}"/>
+
+                        <Entry Placeholder="Ingrese su Fecha de Registro"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding txtFechaRegistro}"/>
+
+
+                        <Entry Placeholder="Ingrese su Nombre"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding txtNombre}"/>
+
+                        <Entry Placeholder="Ingrese su Telefono"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding txtTelefono}"/>
+
+                        <Button Text="Registrar"
+                                BackgroundColor="#22bb33"
+                                CornerRadius="10"
+                                Command="{Binding InsertarClienteComando}"/>
+
+                       
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

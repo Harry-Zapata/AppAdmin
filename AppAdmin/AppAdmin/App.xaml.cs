@@ -10,7 +10,7 @@ namespace AppAdmin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new clientes());
         }
 
         protected override void OnStart()

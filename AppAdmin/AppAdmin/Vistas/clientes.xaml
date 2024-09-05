@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppAdmin.Vistas.clientes"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://i.pinimg.com/236x/87/ae/1a/87ae1a962f81a163cd6507f2add9da6b.jpg" 
+                   Aspect="Fill" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"/>
+            <StackLayout>
+                <Label Text="Gestion de clientes" FontAttributes="Bold" TextColor="White" Margin="50" HorizontalOptions="Center"
+                       FontSize="25"/>
+                <Frame CornerRadius="5" Margin="300,0,10,0">
+                    <StackLayout>
+                        <ImageButton Source="https://cdn-icons-png.flaticon.com/512/760/760737.png"
+                                     BackgroundColor="Transparent"
+                                     Clicked="Button_Clicked"/>
+                        <Label Text="cliente" Grid.Row="1" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" FontSize="14"/>
+                    </StackLayout>
+                </Frame>
+                <Button Text="Regresar" Margin="10,500,280,0" BackgroundColor="#FF696A" CornerRadius="10" TextColor="White"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
