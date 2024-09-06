@@ -22,7 +22,18 @@
                         </MultiBinding>
                     </Label.Text>
                 </Label>
-                <Image Source="https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149344.png"/>
+
+                <Frame BackgroundColor="Transparent"
+                       HasShadow="False"
+                       CornerRadius="100"
+                       Padding="0"
+                       Margin="0,20,0,0"
+                       HorizontalOptions="Center"
+                       HeightRequest="200"
+                       WidthRequest="200">
+                    <Image Source="{Binding txtFoto}"
+                           Aspect="Fill"/>
+                </Frame>
 
                 <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*" Padding="30">
                     <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="Beige" Padding="10">

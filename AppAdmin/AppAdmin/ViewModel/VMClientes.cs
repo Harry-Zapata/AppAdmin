@@ -49,11 +49,6 @@ namespace AppAdmin.ViewModel
             get { return fechaNacimiento; }
             set { SetValue(ref fechaNacimiento, value); }
         }
-         public string txtFechaRegistro
-        {
-            get { return fechaRegistro; }
-            set { SetValue(ref fechaRegistro, value); }
-        }
 
         public string txtNombre
         {
@@ -76,14 +71,12 @@ namespace AppAdmin.ViewModel
                 string.IsNullOrWhiteSpace(txtEmail) ||
                 string.IsNullOrWhiteSpace(txtEstado) ||
                 string.IsNullOrWhiteSpace(txtFechaNacimiento) ||
-                string.IsNullOrWhiteSpace(txtFechaRegistro) ||
                 string.IsNullOrWhiteSpace(txtTelefono) ||
                 string.IsNullOrWhiteSpace(txtNombre))
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Debe llenar todos los campos.", "OK");
                 return;
             }
-
             var funcion = new Dclientes();
             var campos = new MClientes
             {
@@ -92,7 +85,7 @@ namespace AppAdmin.ViewModel
                 Email = txtEmail,
                 Estado = txtEstado,
                 FechaNacimineto = txtFechaNacimiento,
-                FechaRegistro = txtFechaRegistro,
+                FechaRegistro = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow,TimeZoneInfo.FindSystemTimeZoneById("EST")).ToString("dd/MM/yyyy HH:mm:ss"),
                 Nombre = txtNombre,
                 Telefono = txtTelefono,
             };
@@ -112,7 +105,6 @@ namespace AppAdmin.ViewModel
             txtEmail = string.Empty;
             txtEstado = string.Empty;
             txtFechaNacimiento = string.Empty;
-            txtFechaRegistro = string.Empty;
             txtNombre = string.Empty;
             txtTelefono = string.Empty;
 

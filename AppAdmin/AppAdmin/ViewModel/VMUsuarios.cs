@@ -19,6 +19,7 @@ namespace AppAdmin.ViewModel
         public string direccion;
         public string nombre;
         public string telefono;
+        public string foto;
         private bool terminosAceptados;
         private bool privacidadAceptada;
         #endregion
@@ -49,6 +50,11 @@ namespace AppAdmin.ViewModel
             get { return telefono; }
             set { SetValue(ref telefono, value); }
         }
+        public string txtFoto
+        {
+            get { return foto; }
+            set { SetValue(ref foto, value); }
+        }
         public bool TerminosAceptados
         {
             get { return terminosAceptados; }
@@ -69,6 +75,7 @@ namespace AppAdmin.ViewModel
                 string.IsNullOrWhiteSpace(txtNombre) ||
                 string.IsNullOrWhiteSpace(txtApellido) ||
                 string.IsNullOrWhiteSpace(txtTelefono) ||
+                string.IsNullOrWhiteSpace(txtFoto) ||
                 string.IsNullOrWhiteSpace(txtDireccion))
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Debe llenar todos los campos.", "OK");
@@ -88,7 +95,8 @@ namespace AppAdmin.ViewModel
                 Nombre = txtNombre,
                 Dni = txtDni,
                 Direccion = txtDireccion,
-                Telefono = txtTelefono
+                Telefono = txtTelefono,
+                Foto = txtFoto,
             };
 
             var estadoFuncion = await funcion.InsertarUsuario(campos);
@@ -106,11 +114,11 @@ namespace AppAdmin.ViewModel
             txtDni = string.Empty;
             txtTelefono = string.Empty;
             txtDireccion = string.Empty;
+            txtFoto = string.Empty;
             TerminosAceptados = false;
             PrivacidadAceptada = false;
 
-            // Navegar a la página de inicio de sesión
-            await Navigation.PushAsync(new Login()); // Asegúrate de que `Login` es la página de inicio de sesión correcta
+            await Navigation.PushAsync(new Login()); 
         }
         #endregion
 

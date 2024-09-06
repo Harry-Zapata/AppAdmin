@@ -36,6 +36,7 @@ namespace AppAdmin.Datos
                     Direccion = usuarios.Direccion,
                     Nombre = usuarios.Nombre,
                     Telefono = usuarios.Telefono,
+                    Foto = usuarios.Foto,
                 });
 
             return true;
@@ -53,6 +54,7 @@ namespace AppAdmin.Datos
                     Nombre = item.Object.Nombre,
                     Direccion= item.Object.Direccion,
                     Telefono= item.Object.Telefono,
+                    Foto= item.Object.Foto,
                 }).ToList();
         }
 
@@ -68,6 +70,7 @@ namespace AppAdmin.Datos
                     Direccion = item.Object.Direccion,
                     Nombre = item.Object.Nombre,
                     Telefono = item.Object.Telefono,
+                    Foto = item.Object.Foto,
                 }).ToList();
         }
 
@@ -84,6 +87,7 @@ namespace AppAdmin.Datos
                     Direccion = item.Object.Direccion,
                     Nombre = item.Object.Nombre,
                     Telefono = item.Object.Telefono,
+                    Foto = item.Object.Foto,
                     idUsuario = item.Key
                 }).ToList();
         }

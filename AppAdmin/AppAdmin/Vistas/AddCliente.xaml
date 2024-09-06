@@ -16,44 +16,37 @@
                 <Frame CornerRadius="25">
                     <StackLayout WidthRequest="300">
                         <Label Text="Registrar Clientes" 
-                       TextColor="#000" 
-                       FontAttributes="Bold" 
-                       FontSize="20" 
-                       HorizontalOptions="Center"/>
+                               TextColor="#000" 
+                               FontAttributes="Bold" 
+                               FontSize="20" 
+                               HorizontalOptions="Center"/>
                         <Entry Placeholder="Ingrese su Direccion"
-                       HorizontalTextAlignment="Center"
-                       FontSize="15"
-                       Text="{Binding txtDireccion}"
-                       MaxLength="8"
-                       Keyboard="Numeric"/>
-
-                        <Entry Placeholder="Ingrese su Dni"
-                       HorizontalTextAlignment="Center"
-                       FontSize="15"
-                       Text="{Binding txtDni}"/>
-
-                        <Entry Placeholder="Ingrese su Email"
-                       HorizontalTextAlignment="Center"
-                       FontSize="15"
-                       Text="{Binding txtEmail}"/>
-
-                        <Entry Placeholder="Ingrese el Estado"
-                       HorizontalTextAlignment="Center"
-                       FontSize="15"
-                       Text="{Binding txtEstado}"
-                       Keyboard="Numeric"
-                       MaxLength="9"
-                       />
-
-                        <Entry Placeholder="Ingrese su Fecha de Nacimineto"
-                       HorizontalTextAlignment="Center"
-                       FontSize="15"
-                       Text="{Binding txtFechaNacimineto}"/>
-
-                        <Entry Placeholder="Ingrese su Fecha de Registro"
                                HorizontalTextAlignment="Center"
                                FontSize="15"
-                               Text="{Binding txtFechaRegistro}"/>
+                               Text="{Binding txtDireccion}"
+                               />
+
+                        <Entry Placeholder="Ingrese su Dni"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Keyboard="Numeric"
+                               Text="{Binding txtDni}"/>
+
+                        <Entry Placeholder="Ingrese su Email"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding txtEmail}"/>
+
+                        <Entry Placeholder="Ingrese el Estado"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding txtEstado}"
+                        />
+
+                        <Entry Placeholder="Ingrese su Fecha de Nacimineto"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding txtFechaNacimiento}"/>
 
 
                         <Entry Placeholder="Ingrese su Nombre"
@@ -63,6 +56,7 @@
 
                         <Entry Placeholder="Ingrese su Telefono"
                                HorizontalTextAlignment="Center"
+                               Keyboard="Telephone"
                                FontSize="15"
                                Text="{Binding txtTelefono}"/>
 

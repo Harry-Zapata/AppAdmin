@@ -6,9 +6,9 @@
     <ContentPage.Content>
         <Grid>
             <Image Source="https://i.pinimg.com/236x/87/ae/1a/87ae1a962f81a163cd6507f2add9da6b.jpg"
-           Aspect="Fill" 
-           HorizontalOptions="FillAndExpand" 
-           VerticalOptions="FillAndExpand"
+                   Aspect="Fill" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"
            />
             <StackLayout Margin="50"
                  HorizontalOptions="CenterAndExpand"
@@ -20,6 +20,13 @@
                                FontAttributes="Bold" 
                                FontSize="20" 
                                HorizontalOptions="Center"/>
+                        
+                        <Entry Placeholder="Foto de Perfil"
+                               HorizontalTextAlignment="Center"
+                               FontSize="15"
+                               Text="{Binding txtFoto}"
+                               />
+                        
                         <Entry Placeholder="Ingrese su DNI"
                                HorizontalTextAlignment="Center"
                                FontSize="15"

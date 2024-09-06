@@ -13,6 +13,7 @@ namespace AppAdmin.ViewModel
         public string nombre;
         public string apellido;
         public string dni;
+        public string foto;
         public List<MUsuarios>  lusuarios = new List<MUsuarios>();
         #endregion
 
@@ -32,6 +33,11 @@ namespace AppAdmin.ViewModel
             get { return dni; }
             set { SetValue(ref dni, value); }
         }
+        public string txtFoto
+        {
+            get { return foto; }
+            set { SetValue(ref foto, value); }
+        }
         public List<MUsuarios> ListaUsuarios
         {
             get { return lusuarios; }
@@ -48,6 +54,7 @@ namespace AppAdmin.ViewModel
             lblNombre = datos.Nombre;
             lblApellido = datos.Apellido;
             lblDni = datos.Dni;
+            txtFoto = datos.Foto;   
         }
         #endregion
 

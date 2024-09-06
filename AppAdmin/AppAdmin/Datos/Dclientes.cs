@@ -8,6 +8,7 @@ using Firebase.Database;
 using Firebase.Database.Query;
 using System.Linq;
 using AppAdmin.ViewModel;
+using AppAdmin.Vistas;
 
 namespace AppAdmin.Datos
 {
@@ -40,6 +41,23 @@ namespace AppAdmin.Datos
                     Telefono = clientes.Telefono,
                 });
             return true;
+        }
+
+        public async Task<List<MClientes>> ListarClientes()
+        {
+            return (await ConexionFirebase.ClientFirebase
+                .Child("Clientes")
+                .OnceAsync<MClientes>()).Select(item => new MClientes
+                {
+                    Direccion = item.Object.Direccion,
+                    Dni = item.Object.Dni,
+                    Email = item.Object.Email,
+                    Estado = item.Object.Estado,
+                    FechaNacimineto = item.Object.FechaNacimineto,
+                    FechaRegistro = item.Object.FechaRegistro,
+                    Nombre = item.Object.Nombre,
+                    Telefono = item.Object.Telefono,
+                }).ToList();
         }
 
     }

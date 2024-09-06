@@ -11,6 +11,7 @@ namespace AppAdmin.Modelo
         public string Direccion { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }
+        public string Foto { get; set; }
         public string idUsuario { get; set; }
     }
 }
